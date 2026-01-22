@@ -1,0 +1,55 @@
+body {
+    /*background:#F29F05;*/
+    background-image: url("images/white-clownfish.jpg")
+}
+
+h1 {
+    color:#401B13;
+}
+
+h2{
+    color:#671503;
+}
+
+p{
+    color:#8C1C03;
+}
+
+table, td, tr{
+    padding: 8px;
+    border: 2px solid #f27405;
+    background:#fff1d7;
+    color:#703705;
+    text-align: center;
+}
+
+#content{
+    background:#ffc251;
+    border: 4px solid #59261a;
+    padding: 6px;
+}
+
+img{
+    border: 4px solid #59261a;
+    padding: 2px;
+}
+
+#swim2{
+    text-align: center;
+}
+
+#links{
+    text-align: center;
+}
+
+a:link {
+    color: #8a6f3d;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #5b4824;
+    background-color: transparent;
+    text-decoration: none;
+}

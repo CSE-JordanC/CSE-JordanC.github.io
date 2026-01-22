@@ -1,0 +1,39 @@
+body {
+    background: #F2CEAE;
+    font-family: 'Franklin Gothic Medium';
+}
+
+#text {
+    background:#ffebda;
+    margin: auto;
+    border: 4px solid #5f4e41;
+    padding: 6px;
+}
+
+h1 {
+    color: #40352C;
+}
+
+h2 {
+    color: #6c5140;
+}
+
+#info {
+    color: #8C6954;
+}
+
+#links {
+    color: #8C7B26;
+}
+
+a:link {
+    color: #bea732;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #7c6d21;
+    background-color: transparent;
+    text-decoration: none;
+}

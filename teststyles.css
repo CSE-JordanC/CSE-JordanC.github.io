@@ -1,0 +1,20 @@
+body {
+    background: rgb(169, 255, 176);
+    font-family: 'Franklin Gothic Medium';
+}
+
+h1 {
+    color: rgb(36, 68, 38);
+}
+
+h2 {
+    color: rgb(41, 90, 47);
+}
+
+.info {
+    color: rgb(57, 104, 60);
+}
+
+.links {
+    color: rgb(75, 133, 79);
+}
