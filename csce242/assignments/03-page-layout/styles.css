@@ -1,0 +1,243 @@
+/* Main Structure */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#BDD5EA;
+    color:#F7F7FF;
+}
+
+#main-header{
+    color: #3d73be;
+    margin:0px;
+    text-align: center;
+}
+
+#main-header h1{
+    margin-bottom: 8px;
+}
+
+#main-footer{
+    background-color: #7b9ecf;
+    text-align: center;
+    padding: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+/* Four Titles */
+#fourtitles section{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#fourtitles section h3{
+    background: #3d73be;
+    text-align: center;
+    margin: 0;
+}
+
+#fourtitles section p{
+    color: #3d73be;
+}
+
+#fourtitles section img{
+    text-align: center;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+
+/* Idea1 */
+#idea1 section{
+    background: #3d73be;
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#idea1 section h3{
+    padding: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#idea1 section p{
+    padding: 8px;
+    padding-top: 0px;
+}
+
+#idead1 section img{
+    padding: 0px;
+}
+
+
+/* Idea2 */
+#idea2 section{
+    background: #90caee;
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#idea2 section h3{
+    padding: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#idea2 section p{
+    padding: 8px;
+    padding-top: 0px;
+}
+
+#idead2 section img{
+    padding: 0px;
+}
+
+
+/* Idea3 */
+#idea3 section{
+    background: #3d73be;
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#idea3 section h3{
+    padding: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#idea3 section p{
+    padding: 8px;
+    padding-top: 0px;
+}
+
+#idead3 section img{
+    padding: 0px;
+}
+
+
+/* Navigation */
+#main-nav{
+    text-align: center;
+}
+
+#main-nav ul{
+    margin: 0;
+    padding-left: 0;
+}
+
+#main-nav li{
+    list-style-type: none;
+    background: #7b9ecf;
+    padding:5px;
+    margin: 1px;
+    border-bottom: 1px solid #BDD5EA;
+    border: 2px solid #7b9ecf;
+}
+
+#main-nav a {
+    color:#F7F7FF;
+    border-bottom: 1px solid transparent;
+    text-decoration: none; /* Removes underline */
+}
+
+#main-nav a:hover {
+    border-bottom: 1px solid #3d73be;
+}
+
+
+/* Removes "invisibile" bottom gap under images */
+#idea1 img,
+#idea2 img,
+#idea3 img,
+#fourtitles img {
+  display: block;
+}
+
+
+/*Larger Screens */
+@media (min-width: 768px) {
+    .columns{
+        display:flex;
+    }
+
+    .one{
+        flex:1;
+    }
+
+    .two{
+        flex:2;
+    }
+
+    .three{
+        flex:3;
+    }
+
+    .four{
+        flex:4;
+    }
+
+    .five{
+        flex:5;
+    }
+
+    #main-nav ul{
+        display:flex;
+    }
+}
+
+
+/* Smaller Screens */
+@media (max-width: 767px) {
+    /* Main Structure */
+    #content{ 
+        margin: 8px; 
+    }
+  
+
+    /* Four Titles */
+    #fourtitles .one{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 8px 0;
+    }
+  
+    #fourtitles .one h3{
+      width: 100%;
+      margin-bottom: 6px;
+    }
+  
+    #fourtitles .one img{
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      width: 200px;
+      max-width: 80vw;
+    }
+
+
+    /* Ideas 1-3 */
+    #idea1 .one,
+    #idea2 .one,
+    #idea3 .one{
+        display: flex;
+        justify-content: center;
+    }
+
+    #idea1 img,
+    #idea2 img,
+    #idea3 img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        width: 200px;
+        max-width: 80vw;
+    }
+  }
