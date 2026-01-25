@@ -1,39 +1,94 @@
-body {
+/* Main Structure */
+body{
     background: #F2CEAE;
     font-family: 'Franklin Gothic Medium';
 }
 
-#text {
-    background:#ffebda;
-    margin: auto;
-    border: 4px solid #5f4e41;
-    padding: 6px;
+#main-text{
 }
 
-h1 {
+h1{
     color: #40352C;
+    text-align: center;
 }
 
-h2 {
+h2{
     color: #6c5140;
 }
 
-#info {
+h3{
+    color: #574133;
+}
+
+p{
+    padding: 8px;
+    text-align: center;
+}
+
+#info{
     color: #8C6954;
 }
 
-#links {
+#links{
     color: #8C7B26;
 }
 
-a:link {
+a:link{
     color: #bea732;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:visited {
+a:visited{
     color: #7c6d21;
     background-color: transparent;
     text-decoration: none;
+}
+
+
+/* Assignments/Projects Title */
+#title{
+    text-align: center;
+}
+
+
+/* Assignments/Projects Box */
+#workbox{
+}
+
+/* Assignment/Project Sections */
+.one{
+    background:#ffebda;
+    margin: 10px;
+    border: 4px solid #5f4e41;
+    padding: 0px;
+    text-align:center;
+}
+
+
+/* Larger Screens */
+@media (min-width: 768px){
+    .columns{
+        display:flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .one{
+        flex:0.3;
+    }
+
+    .two{
+        flex:2;
+    }
+
+    .three{
+        flex:3;
+    }
+}
+
+
+/* Smaller Screens */
+@media (min-width: 767px){
+
 }
