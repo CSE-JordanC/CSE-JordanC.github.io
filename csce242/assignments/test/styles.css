@@ -1,0 +1,83 @@
+:root{
+    /* exact-ish USC color palette sampled visually */
+    --usc-garnet: #990000;
+    --usc-garnet-dark: #6b0000;
+    --text: #222222;
+    --muted: #6b6b6b;
+    --bg: #ffffff;
+    --card-bg: #f6f6f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family: 'Segoe UI', Roboto, -apple-system, 'Helvetica Neue', Arial; color:var(--text); background:var(--bg); line-height:1.5}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  
+  /* Top utility */
+  .top-utility{background:var(--usc-garnet);color:#fff;font-size:13px}
+  .top-utility-inner{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+  .top-utility a{color:rgba(255,255,255,0.95);text-decoration:none;margin-right:14px;font-weight:600}
+  
+  /* Main header */
+  .main-header{background:#fff;border-bottom:4px solid var(--usc-garnet)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{height:48px;width:auto}
+  .brand-text .site-title{font-size:20px;color:var(--usc-garnet);font-weight:800}
+  .brand-text .site-sub{font-size:12px;color:var(--muted);margin-top:2px}
+  
+  /* header right area */
+  .header-actions{display:flex;align-items:center;gap:18px}
+  
+  /* Navbar - always visible, top-level only */
+  .main-nav ul{display:flex;gap:18px;list-style:none;align-items:center}
+  .main-nav a{color:var(--text);text-decoration:none;font-weight:700;text-transform:none}
+  
+  /* CTA buttons */
+  .cta-buttons{display:flex;gap:10px;align-items:center}
+  .btn{display:inline-block;padding:8px 14px;border-radius:4px;text-decoration:none;font-weight:700;font-size:14px}
+  .btn-primary{background:var(--usc-garnet);color:#fff}
+  .btn-outline{background:#fff;border:2px solid var(--usc-garnet);color:var(--usc-garnet)}
+  .btn-ghost{background:transparent;color:var(--usc-garnet);border:0}
+  
+  /* Hero area */
+  .hero{background-image:url('https://placehold.co/1600x480?text=Hero+Image');background-size:cover;background-position:center;color:#fff;padding:38px 0}
+  .hero-inner{padding:36px;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.35));border-radius:6px}
+  .hero h1{font-size:36px;margin-bottom:8px}
+  .hero p{font-size:16px;opacity:0.95}
+  
+  /* Content layout */
+  .main-content{margin:28px auto}
+  .grid{display:flex;gap:28px}
+  .main{flex:2}
+  .aside{flex:1}
+  .card{background:var(--card-bg);padding:20px;border-radius:6px}
+  .card h3{color:var(--usc-garnet);margin-bottom:10px}
+  .feature-row{display:flex;gap:14px;margin:18px 0}
+  .feature{flex:1;background:#fff;padding:12px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  .feature img{width:100%;height:140px;object-fit:cover;border-radius:4px;margin-bottom:8px}
+  .news-list{margin-top:12px;list-style:disc;padding-left:20px;color:var(--muted)}
+  .quick-links{list-style:none;margin-top:12px;line-height:1.8}
+  .muted{font-size:14px;color:var(--muted)}
+  
+  /* Footer */
+  .site-footer{background:#050505;color:#ddd;padding:28px 0;margin-top:32px}
+  .footer-inner{display:flex;gap:24px;align-items:flex-start}
+  .f-left{flex:2}
+  .f-right{flex:1}
+  .footer-inner a{color:#fff;text-decoration:none}
+  
+  /* Responsive: keep navbar visible and wrap */
+  @media (max-width:1000px){
+    .main-nav ul{flex-wrap:wrap}
+    .header-inner{gap:12px}
+    .feature-row{flex-direction:column}
+    .grid{flex-direction:column}
+  }
+  @media (max-width:700px){
+    .brand img{height:40px}
+    .hero h1{font-size:26px}
+    .header-inner{padding:10px 0}
+    .cta-buttons{gap:8px}
+  }
+  
+  /* make sure links don't navigate away */
+  a[href="#"]{cursor:pointer}  
