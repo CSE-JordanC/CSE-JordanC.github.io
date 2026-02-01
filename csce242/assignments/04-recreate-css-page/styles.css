@@ -1,5 +1,5 @@
 /* Main Structure */
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -8,38 +8,36 @@ html, body {
     padding: 0;
 }
 
-#main-content{
-    /*background:#577399;*/
+#main-content {
     width:100%;
     margin: auto;   
     padding:0;
-    /*border:4px solid #495867;*/
     color:#F7F7FF;
 }
 
-#main-header{
+#main-header {
     background: #000000;
     position: relative;
 }
 
-#main-footer{
+#main-footer {
     background: #000000;
     position: relative;
 }
 
-#main-footer li:not(:last-child)::after{
+#main-footer li:not(:last-child)::after {
     content: "  |";
 }
 
 
 /* Main Nav */
-#main-nav{
+#main-nav {
     background: #740303;
     text-align: right;
     height: 60px;
 }
 
-#main-nav ul{
+#main-nav ul {
     position: absolute;
     right: 5%;
     top: 71%;
@@ -47,7 +45,7 @@ html, body {
 
 
 /* Top Login Nav */
-#login-nav{
+#login-nav {
     background:var(--garnet);
     color:#fff;
     font-size:10px;
@@ -56,86 +54,85 @@ html, body {
     font-weight:600
 }
 
-#login-nav{
+#login-nav {
     position: relative;
 }
 
-#login-nav li:not(:last-child)::after{
+#login-nav li:not(:last-child)::after {
     content: "  |";
 }
 
 
-/* Images  */
-img{
+/* Images */
+img {
     max-width:100%;
 }
 
 
 /* Navigation */
-nav{
-
+nav ul {
+    padding-left: 0;
 }
 
-nav ul{
-    padding-left: 0; /* Removes indentation */
-}
-
-nav li{
-    list-style-type: none; /* Removes bullet */
+nav li {
+    list-style-type: none;
     background: #740303;
     padding:5px;
 
 }
 
-nav a{
-    text-decoration: none; /* Removes underline */
+nav a {
+    text-decoration: none;
 }
 
 
 /* Footer */
-footer ul{
-    padding-left: 0; /* Removes indentation */
+footer ul {
+    padding-left: 0;
     margin-left: 70px;
     margin-bottom: 0px;
     margin-top: 2px;
 }
 
-footer li{
-    list-style-type: none; /* Removes bullet */
+footer li {
+    list-style-type: none;
     background: #740303;
     padding:5px;
 
 }
 
-footer a{
-    text-decoration: none; /* Removes underline */
+footer a {
+    text-decoration: none;
 }
 
 
 /* Logo */
-.logo{
+.logo {
     display:flex;
     align-items:center;
     gap:14px;
     margin-left: 55px;
     margin-bottom: 20px;
+    border:#403f3f;
 }
-  .logo img{
+
+.logo img {
     height:48px;
-    width:auto
+    width:auto;
+    border:solid white 2px;
 }
-  .logo-text .site-title{
+  .logo-text .site-title {
     font-size:14px;
     color:var(--usc-garnet);
     font-weight:800
 }
-  .logo-text .site-sub{
+  .logo-text .site-sub {
     font-size:26px;
     color:var(--muted);
     margin-top:2px
 }
 
-.med{
+.med {
     font-size:26px;
     position: absolute;
     right: 5%;
@@ -144,7 +141,7 @@ footer a{
 
 
 /* Hero + Lead text */
-.hero{
+.hero {
     height: 60vh;
     width: 100%;
     overflow: hidden;
@@ -152,14 +149,14 @@ footer a{
     display: block;
 }
   
-.hero img{
+.hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.lead-text{
+.lead-text {
     background: #ffffff;
     height: 40vh;
     display: flex;
@@ -180,7 +177,7 @@ footer a{
 
 
 /* Testimonial Section */
-.testimonial-section{
+.testimonial-section {
     background: #ffffff;
     padding: 6rem 4% 6rem;
     box-sizing: border-box;
@@ -201,7 +198,7 @@ footer a{
     align-items: center;
 }
   
-.testimonial-photo img{
+.testimonial-photo img {
     width: 320px;
     height: 320px;
     object-fit: cover;
@@ -242,7 +239,7 @@ footer a{
     max-width: 760px;
 }
 
-.quote-body{
+.quote-body {
     margin: 0 0 1.25rem;
     font-size: 1.2rem;
     line-height: 1.9;
@@ -251,7 +248,7 @@ footer a{
     font-family: Georgia, "Times New Roman", serif;
 }
   
-.quote-author{
+.quote-author {
     margin: 0;
     font-size: 0.95rem;
     font-weight: 700;
@@ -454,6 +451,272 @@ footer a{
 }
 
 
+/* STAY CONNECTED SECTION */
+.stay-connected {
+    background: #efefef;
+    padding: 4.5rem 0 3rem;
+    margin-top: 60px;
+}
+  
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 4%;
+    text-align: center;
+}
+  
+.sc-title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #740303;
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+}
+  
+.sc-sub {
+    color: #333;
+    font-size: 1rem;
+    margin: 0 auto 2.5rem;
+    max-width: 720px;
+}
+  
+.sc-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+  
+.sc-cta {
+    background: #740303;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 0.9rem 1.4rem;
+    min-width: 220px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+    letter-spacing: 0.04em;
+}
+  
+
+/* SOMC footer (white area) */
+.site-footer {
+    background: #ffffff;
+    padding: 3.25rem 0 2.25rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+  
+    display: grid;
+    grid-template-columns: 1fr 520px 320px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.footer-left {
+}
+  
+.footer-mid {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+  
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+  
+.footer-links li {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+  
+.footer-links a {
+    color: #740303;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.footer-right {
+    text-align: right;
+}
+  
+.footer-title {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #740303;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+}
+  
+.my-somc {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 3px solid #fff;
+    margin-bottom: 0.9rem;
+}
+  
+.social-row {
+    display:flex;
+    gap:0.6rem;
+    margin-top:1rem;
+}
+
+.social-icon {
+    width:36px;
+    height:36px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    background: rgba(116,4,3,0.08);
+    color:#740303;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.footer-mid .footer-links {
+    max-width: 220px;
+}
+  
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+  
+.footer-links a {
+    color: #740303;
+    font-weight: 700;
+    text-decoration: none;
+}
+  
+.footer-right {
+    max-width: 320px;
+    text-align: right;
+}
+  
+.campus-link {
+    color: #740303;
+    font-weight: 700;
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+  
+.campus-address {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+}
+  
+
+/* GLOBAL USC FOOTER (GARNET) */
+.usc-footer {
+    background: #740303;
+    color: #fff;
+ }
+  
+.usc-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 4%;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+  
+.usc-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.usc-brand img {
+    width: 60px;
+}
+  
+.usc-brand span {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+  
+.usc-social {
+    display: flex;
+    gap: 1rem;
+}
+  
+.usc-social a {
+    width: 38px;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+  
+/* Links grid */
+.usc-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 3rem 4%;
+}
+  
+.usc-col {
+    flex: 1 1 140px;
+}
+  
+.usc-col h4 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+  
+.usc-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+  
+.usc-col li {
+    margin-bottom: 0.65rem;
+}
+  
+.usc-col a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+  
+.usc-col .highlight a {
+    background: rgba(255,255,255,0.15);
+    padding: 0.2rem 0.35rem;
+} 
+
+
 /* Typography*/
 #main-header h1{
     padding-top: 20px;
@@ -474,6 +737,8 @@ footer a{
     color: #333;
     font-size: 1rem;
 }
+
+
 
 
 
@@ -525,7 +790,7 @@ footer a{
 
 
     /* Footer */
-    footer ul{
+    #main-footer ul{
         display:flex;
     }
 
@@ -545,47 +810,227 @@ footer a{
 }
 
 
-/* Small devices */
+/* Small devices: single-column, centered layout + always-show navs */
 @media (max-width: 767px) {
 
-    /* Hero/Text */
-    .hero{ 
-        height: 50vh;
-    }
-
-    .lead-text{ 
-        height: 50vh; 
+    /* Center the site and limit width for easier reading */
+    #main-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 12px;
+      box-sizing: border-box;
     }
   
-    .logo{ 
-        margin-left: 14px; 
-    } 
-
-    .text-card{
-        padding: 1.25rem;
-        margin: 0 1rem;
+    /* Header stacking */
+    #main-header {
+      padding: 12px 0;
+    }
+  
+    /* Logo centered and stacked */
+    .logo {
+      margin: 0 auto 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
     }
 
-    .text-card h2{
+    .logo img {
+      height: 80px;
+      width: auto;
+      border: 2px solid white;
+    }
+
+    .logo-text .site-title,
+    .logo-text .site-sub,
+    .med {
+      text-align: center;
+      position: static;
+      color: #ffffff;
+    }
+
+    .med {
+        font-size: 18px;
+        margin-top: 4px;
+    }
+  
+    /* Make both navs visible, full-width and centered */
+    #login-nav,
+    #main-nav {
+      position: static;
+      width: 100%;
+      background: #740303;
+      box-sizing: border-box;
+    }
+  
+    /* Nav lists: center items, allow wrapping */
+    #login-nav ul,
+    #main-nav ul {
+      position: static;
+      top: auto;
+      right: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 6px;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+  
+    /* Remove desktop absolute/background styles on li */
+    nav li {
+      list-style: none;
+      background: transparent;
+      padding: 6px 8px;
+    }
+  
+    /* Nav links high-contrast for mobile */
+    nav a {
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+    }
+  
+    /* Hero sizes */
+    .hero {
+      height: 50vh;
+    }
+
+    .lead-text {
+      height: auto;
+      padding: 1.5rem 0;
+    }
+  
+    .text-card {
+      padding: 1.25rem;
+      margin: 0 1rem;
+      max-width: 100%;
+      text-align: center;
+    }
+    .text-card h2 {
         font-size: 1.25rem;
     }
-
-
-    /* Testimonial/Quote */
-    .testimonial-inner{
-        padding: 0 8px;
+  
+    /* Make hero overlays flow naturally (no absolute overlapping) */
+    .education-overlay,
+    .research-overlay,
+    .institute-overlay {
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: none;
+      margin-top: -4px;
+      padding: 1.25rem;
+    }
+  
+    .cards-inner {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 0;
+      align-items: stretch;
     }
 
-    .testimonial-photo img{
-        width: 200px;
-        height: 200px;
+    .card {
+      width: 100%;
+    }
+  
+    .testimonial-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0 8px;
     }
 
-    .quote-head, .quote-tail{
-        font-size: 3.5rem;
+    .testimonial-photo img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
     }
 
-    .quote-content{
+    .quote-head, .quote-tail {
+      font-size: 3.5rem;
+    }
+
+    .quote-content {
         max-width: 100%;
     }
+  
+
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      text-align: center;
+    }
+
+    .footer-right {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .usc-footer-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .usc-footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    #main-nav {
+        height: auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #login-nav {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #login-nav ul {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 6px 0;
+    }
+
+    /* Footer */
+    footer li{
+        background: transparent;
+    }
+
+    footer a{
+        color:#F7F7FF;
+        border-bottom: 1px solid transparent;
+    }
+
+    footer a:hover{
+        background-color: #d84343;
+    }
+
+    nav a:hover{
+        background-color: #d84343;
+    }
+
+    #main-content {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
   }
+  
