@@ -1,0 +1,283 @@
+:root{
+    --bg: #f3f6f2;
+    --card: #f0ebd8;
+    --accent: #6b9aa0;
+    --muted: #6f8c89;
+    --accent-2: #e07a7a;
+    --frame: #bcd8d6;
+    --shadow: rgba(18, 40, 39, 0.06);
+}
+  
+
+/* Reset */
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    margin:0; 
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    background:var(--bg); 
+    color:#2b3b3b;
+}
+  
+
+/* Page Content */
+.page{
+    max-width:1200px;
+    margin:18px auto;
+    padding:8px;
+}
+
+.page-header{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.page-header h1{
+    margin:0;color:var(--accent);
+    font-size:32px;
+}
+
+.page-header h2{
+    margin:6px 0 0;
+    color:var(--accent-2);
+    font-size:18px;
+}
+  
+
+/* Grid and Card Styling */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+    align-items:start;
+}
+
+.card{
+    background:var(--card);
+    border:2px solid var(--frame);
+    padding:0;
+    border-radius:4px;
+    box-shadow:0 4px 10px var(--shadow);
+    display:flex;
+    flex-direction:column;
+    min-height:320px;
+}
+
+.card-head{
+    text-align:center;
+    padding:20px 12px;
+    font-weight:700;
+    color:var(--accent);
+    border-bottom:2px solid rgba(0,0,0,0.03);
+}
+
+.card-body{
+    padding:28px;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+  
+
+/* Date Styles */
+.date-wrap{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+input[type="date"]{
+    padding:6px 8px;
+    border-radius:4px;
+    border:1px solid #cfcfcf;
+    background:white;
+    font-size:15px;
+}
+
+.picked{
+    color:var(--muted);
+    font-weight:600;
+    margin-top:6px;
+}
+
+.picked strong{
+    color:#134444;
+}
+  
+
+/* Geometry */
+.geometry{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.triangle-box{
+    width:160px;
+    height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    user-select:none;
+    position:relative;
+}
+
+.triangle{
+    width:0;
+    height:0;
+    border-left:48px solid transparent;
+    border-right:48px solid transparent;
+    border-bottom:80px solid var(--accent-2);
+    opacity:0;transform:translateY(8px) scale(0.9);
+    transition:all 300ms ease;
+}
+
+.triangle.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+  
+
+/* Image Styles */
+.image-frame{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:260px;
+    height:200px;
+    position:relative;
+    cursor:pointer;
+}
+
+.sun-svg{
+    width:160px;
+    height:160px;
+    transition:transform 300ms ease;
+}
+
+.image-frame .frame-3d{
+    pointer-events:none;
+    position:absolute;
+    width:70%;
+    height:70%;
+    border-radius:6px;
+    box-sizing:border-box;
+    border-top:8px solid #d94c4c;
+    border-right:8px solid #1d7a35;
+    border-bottom:8px solid #1450b5;
+    border-left:8px solid #7a1f7a;
+    transform:translateY(6px);
+    z-index:0;
+}
+
+.image-frame svg{
+    z-index:1;
+}
+
+/* Frame is hidden by default */
+.image-frame .frame-3d{
+    pointer-events:none;
+    position:absolute;
+    width:70%;
+    height:70%;
+    border-radius:6px;
+    box-sizing:border-box;
+    display:none;
+    transform: translateY(6px);
+    z-index:0;
+}
+  
+.image-frame.framed .frame-3d{
+    display:block;
+    animation: frameIn 260ms ease;
+}
+  
+
+.image-frame.framed .sun-svg{
+    transform-origin:center center;
+    transform: scale(0.96);
+    transition: transform 260ms ease;
+}
+  
+@keyframes frameIn{
+    from{
+        opacity:0;
+        transform: translateY(12px) scale(0.96);
+    }
+    
+    to{
+        opacity:1;
+        transform: translateY(6px) scale(1);
+    }
+}
+  
+  
+
+/* Footer Area */
+#main-footer{
+    text-align:center;
+    margin-top:14px;
+    color:var(--muted);
+}
+  
+
+/* Interactions */
+.card:focus-within, .card:hover{
+    box-shadow:0 6px 16px rgba(18,40,39,0.09);
+    transform:translateY(-2px);
+    transition:all 180ms ease;
+}
+
+.triangle-box:focus{
+    outline:3px solid rgba(107,154,160,0.15);
+}
+
+input[type="date"]:focus{
+    outline:3px solid rgba(107,154,160,0.12);
+}
+ 
+
+/* Single column on smaller screens*/
+@media (max-width:860px){
+    .grid{
+        grid-template-columns:1fr;
+        gap:16px
+    }
+
+    .card{
+        min-height:180px
+    }
+    
+    .image-frame{
+        width:70%;
+        height:160px
+    }
+    
+    #main-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+        padding:10px
+    }
+    
+    #main-header ul{
+        flex-wrap:wrap
+    }
+    
+    .site-footer .footer-inner{
+        flex-direction:column;
+        gap:8px;
+        align-items:flex-start
+    }
+}
+  
