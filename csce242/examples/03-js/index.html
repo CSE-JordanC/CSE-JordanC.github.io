@@ -1,27 +1,73 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Flex Demo</title>
+        <title>JavaScript Demo</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div id="main-content">
             <header id="main-header">
                 <h1>JavaScript</h1>
+                <p id="p-date">test</p>
                 <nav id="main-nav">
-                    <ul>
+                    <div id="toggle-nav">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="hide-small">
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">JSON</a></li>
                     </ul>
                 </nav>
             </header>
             <main id="content">
-                <div class="columns">
+                <div id="gallery" class="columns">
                     <section>
+                        <h3>Show Message</h3>
                         <button id="btn-show-message">Show</button>
-                        <p id = "p-message"></p>
+                        <p id="p-message"></p>
                     </section>
                     <section>
-                        <p><a id="a-click" href ="#">Click Me</a></p>
+                        <h3>Click a Link</h3>
+                        <p><a id="a-click" href="#">Click Me</a></p>
+                    </section>
+                    <section id="ball-playground">
+                        <h3>Animate a Ball</h3>
+                        <button id="btn-bounce">Start</button>
+                        <div id="ball"></div>
+                    </section>
+                    <section>
+                        <h3>Plant Health</h3>
+                        <p>
+                            <label for="txt-num-days">Enter Number of Days</label>
+                            <input type="number" id="txt-num-days">
+                        </p>
+                        <p id="p-plant-message"></p>
+                    </section>
+                    <section>
+                        <h3>Counter</h3>
+                        <button id="btn-start-count">Start</button>
+                        <button id="btn-pause-count">Pause</button>
+                        <button id="btn-stop-count">Stop</button>
+                        <p id="p-count-display"></p>
+                    </section>
+                    <section>
+                        <h3>Money Raising</h3>
+                        <h2>Goal: $5000</h2>
+
+                        <p><label for="txt-donation">Enter Donation</label></p>
+                        <p>
+                            <input type="number" id="txt-ndonation">
+                            <span id="p-donation-error" class="error"></span>
+                        </p>
+
+                        <p><button id="btn-display-donation">Display</button></p>
+                        <p id="p-donation"></p>
+                        <div id="thermometer"></div>
                     </section>
                 </div>
             </main>
@@ -29,6 +75,7 @@
 
             </footer>
         </div>
-        <script src="js/script.js"></script>
+        <script src="js/nav.js"></script>
+        <script src="js/intro.js"></script>
     </body>
 </html>

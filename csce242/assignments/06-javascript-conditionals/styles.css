@@ -1,0 +1,239 @@
+:root {
+    --bg: #f3f6ef;
+    --accent: #3b7b83;
+    --accent-dark: #2f6a6f;
+    --muted: #7b9b9d;
+    --card: #ffffff;
+    --border: #cfe3df;
+    --accent-rose: #c76d6d;
+    --shadow-color: rgba(0,0,0,0.02);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--accent-dark);
+}
+
+#main-content {
+    max-width: 900px;
+    margin: 36px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-header {
+    padding: 18px 12px 6px;
+    margin-bottom: 6px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 38px;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.page-header h2 {
+    margin: 10px 0 18px;
+    font-size: 20px;
+    color: var(--accent-rose);
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+/* Card */
+.card {
+    border: 1px solid var(--border);
+    background: var(--card);
+    box-shadow: 0 2px 0 var(--shadow-color);
+    padding: 18px;
+    margin-top: 6px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+/* NAV card -- default (large screens) is row layout */
+.nav-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-direction: row;
+    background: none;
+    border: none;
+}
+
+/* Card head/body */
+.card-head {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.card-body {
+    padding: 6px 4px 2px;
+}
+
+/* menu toggle (small screens) */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--accent-dark);
+    transition: transform .25s ease;
+    display: inline-block;
+}
+
+.menu-arrow.up {
+    transform: rotate(180deg);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+nav li {
+    padding: 6px 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav li:not(:last-child)::after {
+    content: " |";
+    margin-left: 8px;
+    color: var(--muted);
+    opacity: .8;
+}
+
+nav a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
+
+.slider-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+input[type="range"] {
+    width: 60%;
+    min-width: 200px;
+    max-width: 420px;
+}
+
+.minutes-display {
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.slider-msg {
+    font-size: 15px;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Responsive changes ---------- */
+/* On small screens stack the menu-toggle above the nav list */
+@media (max-width: 720px) {
+    .nav-card {
+        justify-content: flex-start;
+        padding-left: 6px;
+        flex-direction: column;    /* <-- changed: stack vertically */
+        align-items: flex-start;   /* <-- ensure toggle is at left */
+    }
+
+    /* give the toggle a bit of space from the nav list */
+    .menu-toggle {
+        margin-bottom: 6px;        /* <-- new spacing so toggle sits above nav */
+        margin-right: 0;
+    }
+
+    /* hide nav items list by default on small screens */
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        margin-top: 0;             /* reduce extra vertical gap */
+        gap: 6px;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    /* remove pipes for vertical layout */
+    nav li:not(:last-child)::after {
+        content: "";
+    }
+}
+
+@media (min-width: 721px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+    }
+}
+
+#main-footer {
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.exercise-link {
+    color: var(--accent-dark);
+    text-decoration: none;
+    padding: 6px 6px;
+    display: inline-block;
+}
+
+.exercise-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
