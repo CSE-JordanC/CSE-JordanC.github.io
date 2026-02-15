@@ -20,6 +20,10 @@ html, body {
     color: var(--text);
     background: var(--white);
 }
+
+html, body {
+    overflow-x: hidden;
+}
   
 a {
     color: inherit;
@@ -188,6 +192,29 @@ a {
     color: var(--blue-900);
     margin: 10px 0 0;
     text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+/* Lines on both sides */
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 522px;
+    height: 2px;
+    background: var(--blue-900);
+}
+
+.section-title::before {
+    right: 100%;
+    margin-right: 20px;
+}
+
+.section-title::after {
+    left: 100%;
+    margin-left: 20px;
 }
   
 
@@ -227,6 +254,18 @@ a {
     margin: 6px 0;
     color: var(--blue-900);
     font-size: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Line under feature card title */
+.card h3::after {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 2px;
+    background: var(--blue-900);
+    margin: 0px;
 }
   
 .card p {
@@ -241,20 +280,52 @@ a {
     padding: 28px 36px;
     background: #c8c8c8;
     padding-top: 0;
+    text-align: center;
 }
   
 .section-heading {
     font-size: 32px;
     color: var(--blue-900);
-    margin-bottom: 18px;
+    margin: 0 0 18px;
     text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+    white-space: nowrap;
 }
+
+
+.section-heading::before,
+.section-heading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    background: var(--blue-900);
+    transform: translateY(-50%);
+    width: clamp(122px, 44vw, 572px);
+}
+
+.section-heading::before {
+    right: 100%;
+    margin-right: 20px;
+}
+
+.section-heading::after {
+    left: 100%;
+    margin-left: 20px;
+}
+
   
 .cards-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     align-items: start;
+    text-align: left;
 }
   
 
@@ -345,13 +416,15 @@ a {
     align-items: center;
     gap: 4px;
     padding: 12px 18px;
-  }
+}
   
 .footer-cta h3 {
     font-family: 'Kadwa', system-ui, sans-serif;
     font-size: 34px;
     margin: 4px 0;
     color: white;
+    position: relative;
+    display: inline-block;
 }
   
 .footer-cta p {
@@ -364,6 +437,26 @@ a {
 .footer-cta p {
   margin: 0;
   line-height: 1.15;
+}
+
+.footer-cta h3::before,
+.footer-cta h3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 476px;
+    height: 2px;
+    background: white;
+}
+
+.footer-cta h3::before {
+    right: 100%;
+    margin-right: 20px;
+}
+
+.footer-cta h3::after {
+    left: 100%;
+    margin-left: 20px;
 }
   
 .footer-cta .btn-accent-large {
@@ -382,7 +475,7 @@ a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
 }
-  
+
 @media (max-width: 900px) {
     .site-header {
       flex-direction: column;
@@ -408,4 +501,55 @@ a {
       font-size: 28px;
     }
 }
+  
+@media (max-width: 700px) {
+    /* How SkillSwap Hub Works */
+    .section-title::before,
+    .section-title::after {
+      /* keep lines short but responsive on phones */
+      width: clamp(32px, 22vw, 180px);
+    }
+  
+    /* Featured Skills heading */
+    .section-heading::before,
+    .section-heading::after {
+      width: clamp(36px, 26vw, 220px);
+    }
+  
+    /* Footer CTA heading ("Ready to Share Your Skills?") */
+    .footer-cta h3::before,
+    .footer-cta h3::after {
+      width: clamp(32px, 28vw, 240px);
+    }
+  
+    /* --- Feature card title underline: make them relatively longer on phones --- */
+    .card h3::after {
+      width: 270px;
+      margin: 8px auto 0;
+    }
+  
+    /* Ensures inline headings remain centered on narrow screens --- */
+    .section-title,
+    .section-heading,
+    .footer-cta h3 {
+      display: inline-block;
+      padding: 0 8px;
+      white-space: nowrap;
+    }
+  
+    /* Slightly reduces heading font sizes on very small screens */
+    .section-title { 
+        font-size: 22px; 
+    }
+    .section-heading { 
+        font-size: 24px; 
+    }
+    .footer-cta h3 { 
+        font-size: 22px; 
+    }
+
+    .footer-cta p {
+        text-align: center;
+    }
+  }
   
