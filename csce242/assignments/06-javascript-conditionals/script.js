@@ -1,114 +1,100 @@
-/* Menu toggle */
-const menuToggle = document.getElementById('menuToggle');
-const navList = document.getElementById('navList');
-const menuArrow = document.getElementById('menuArrow');
+/* NAV TOGGLE */
+var menuToggle = document.getElementById("menuToggle");
+var navList = document.getElementById("navList");
+var menuArrow = document.getElementById("menuArrow");
 
 function isSmallScreen() {
-    return window.matchMedia('(max-width:720px)').matches;
-}
-
-function toggleMenu() {
-    if (!isSmallScreen()) {
-        return;
-    }
-    const open = navList.classList.toggle('open');
-    menuArrow.classList.toggle('up', open);
-    menuToggle.setAttribute('aria-expanded', !!open);
+    return window.matchMedia("(max-width:720px)").matches;
 }
 
 if (menuToggle) {
-    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.onclick = function () {
+        if (navList.classList.contains("open")) {
+            navList.classList.remove("open");
+            menuArrow.classList.remove("up");
+            menuToggle.setAttribute("aria-expanded", "false");
+        } else {
+            navList.classList.add("open");
+            menuArrow.classList.add("up");
+            menuToggle.setAttribute("aria-expanded", "true");
+        }
+    };
 }
 
-window.addEventListener('resize', () => {
+window.onresize = function () {
     if (!isSmallScreen()) {
-        navList.classList.remove('open');
-        menuArrow.classList.remove('up');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove("open");
+        menuArrow.classList.remove("up");
+        menuToggle.setAttribute("aria-expanded", "false");
     } else {
-        navList.classList.remove('open');
-        menuArrow.classList.remove('up');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove("open");
+        menuArrow.classList.remove("up");
+        menuToggle.setAttribute("aria-expanded", "false");
     }
-});
+};
 
-/* Exercise switching */
-const ex1Link = document.getElementById('ex1Link');
-const ex2Link = document.getElementById('ex2Link');
-const ex1Section = document.getElementById('exercise1');
-const ex2Section = document.getElementById('exercise2');
-
-function showExercise(which) {
-    if (which === 1) {
-        ex1Section.classList.remove('hidden');
-        ex2Section.classList.add('hidden');
-    } else {
-        ex2Section.classList.remove('hidden');
-        ex1Section.classList.add('hidden');
-    }
-
-    if (isSmallScreen()) {
-        navList.classList.remove('open');
-        menuArrow.classList.remove('up');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    if (which === 2) {
-        updateCountdownMessage();
-    }
-}
+/* EXERCISE SWITCHING */
+var ex1Link = document.getElementById("ex1Link");
+var ex2Link = document.getElementById("ex2Link");
+var ex1Section = document.getElementById("exercise1");
+var ex2Section = document.getElementById("exercise2");
 
 if (ex1Link) {
-    ex1Link.addEventListener('click', (e) => {
+    ex1Link.onclick = function (e) {
         e.preventDefault();
-        showExercise(1);
-    });
+        ex1Section.classList.remove("hidden");
+        ex2Section.classList.add("hidden");
+        // close menu on small screens
+        navList.classList.remove("open");
+        menuArrow.classList.remove("up");
+        menuToggle.setAttribute("aria-expanded", "false");
+    };
 }
 
 if (ex2Link) {
-    ex2Link.addEventListener('click', (e) => {
+    ex2Link.onclick = function (e) {
         e.preventDefault();
-        showExercise(2);
-    });
+        ex2Section.classList.remove("hidden");
+        ex1Section.classList.add("hidden");
+        // update message immediately
+        updateCountdownMessage();
+        // close menu on small screens
+        navList.classList.remove("open");
+        menuArrow.classList.remove("up");
+        menuToggle.setAttribute("aria-expanded", "false");
+    };
 }
 
-/* Default show exercise 1 */
-showExercise(1);
-
-/* Exercise 1 slider logic */
-const minutesRange = document.getElementById('minutesRange');
-const minutesValue = document.getElementById('minutesValue');
-const sliderMessage = document.getElementById('sliderMessage');
+/* EXERCISE 1: SLIDER (independent) */
+var minutesRange = document.getElementById("minutesRange");
+var minutesValue = document.getElementById("minutesValue");
+var sliderMessage = document.getElementById("sliderMessage");
 
 function updateSliderUI() {
-    const val = Number(minutesRange.value);
-    minutesValue.textContent = val + (val === 1 ? ' minute' : ' minutes');
+    var val = Number(minutesRange.value);
+    minutesValue.innerHTML = val + (val === 1 ? " minute" : " minutes");
 
-    let msg = '';
     if (val > 45) {
-        msg = '🥓 Let\'s have bacon and eggs — you have plenty of time!';
-    } else if (val > 30 && val <= 45) {
-        msg = '🍳 Perfect for pancakes — plenty of time for a breakfast sprint!';
-    } else if (val > 15 && val <= 30) {
-        msg = '☕ Grab your coffee. No one will judge if you\'re 5 minutes late.';
+        sliderMessage.innerHTML = "🥓 Plenty of time — enjoy breakfast!";
+    } else if (val > 30) {
+        sliderMessage.innerHTML = "🍳 Maybe cook something quick.";
+    } else if (val > 15) {
+        sliderMessage.innerHTML = "☕ Grab coffee and review notes.";
     } else {
-        msg = '🏃‍♀️ Quick — dash to class! Better run than miss it.';
+        sliderMessage.innerHTML = "🏃 Hurry! Time to go!";
     }
-
-    sliderMessage.textContent = msg;
 }
 
 if (minutesRange) {
-    minutesRange.addEventListener('input', updateSliderUI);
+    minutesRange.oninput = updateSliderUI;
     updateSliderUI();
 }
 
-/* Exercise 2 countdown logic */
-const countdownMessage = document.getElementById('countdownMessage');
-
-function minutesUntilClass() {
-    const now = new Date();
-    const classTime = new Date(
+/* EXERCISE 2: COUNTDOWN (uses Date() only) */
+/* Compute minutes from now until 8:30 AM today (positive => future, negative => started) */
+function minutesUntilClassNow() {
+    var now = new Date();
+    var classTime = new Date(
         now.getFullYear(),
         now.getMonth(),
         now.getDate(),
@@ -117,45 +103,50 @@ function minutesUntilClass() {
         0,
         0
     );
-    const diffMs = classTime - now;
-    const diffMinutes = Math.round(diffMs / 60000);
+    var diffMs = classTime - now;
+    var diffMinutes = Math.round(diffMs / 60000);
     return diffMinutes;
 }
 
+var countdownMessage = document.getElementById("countdownMessage");
+
 function updateCountdownMessage() {
-    const mins = minutesUntilClass();
-    let msg = '';
-    const absMins = Math.abs(mins);
+    var mins = minutesUntilClassNow();
+    var absMins = Math.abs(mins);
+    var msg = "";
 
     if (mins > 15) {
-        msg = `You have ${mins} minutes until class. ☀️ Time to relax — maybe stretch or review notes.`;
-    } else if (mins > 10 && mins <= 15) {
-        msg = `About ${mins} minutes left. 🥪 Maybe snag a quick snack.`;
-    } else if (mins > 5 && mins <= 10) {
-        msg = `Only ${mins} minutes. ☕ Brew that coffee and get your bag ready.`;
-    } else if (mins >= 0 && mins <= 5) {
-        msg = `Hurry! ${mins} minute${mins === 1 ? '' : 's'} left. 🏃‍♂️ Run — class is about to start.`;
+        msg = "You have " + mins + " minutes until class. 🌤️ Plenty of time — stretch or review notes.";
+    } else if (mins >= 10 && mins <= 15) {
+        msg = "About " + mins + " minutes left. 🥪 Grab a snack!";
+    } else if (mins >= 5 && mins < 10) {
+        msg = "Only " + mins + " minutes. ☕ Finish that coffee and head out.";
+    } else if (mins >= 0 && mins < 5) {
+        msg = "Hurry! " + mins + (mins === 1 ? " minute" : " minutes") + " left. 🏃 Dash to class.";
     } else if (mins < 0 && mins >= -5) {
-        msg = `Class started ${absMins} minute${absMins === 1 ? '' : 's'} ago. 😬 You're only a smidge late — slip in quietly.`;
+        msg = "Class started " + absMins + (absMins === 1 ? " minute" : " minutes") + " ago. 😬 Slip in quietly.";
     } else if (mins < -5 && mins >= -15) {
-        msg = `Class started ${absMins} minutes ago. 😅 You're fashionably late — catch up on a seat near the back.`;
+        msg = "Class started " + absMins + " minutes ago. 😅 You're a bit late — find a seat near the back.";
     } else {
-        msg = `You missed class by ${absMins} minutes. 😭 Consider checking the recording or notes.`;
+        msg = "Class started " + absMins + " minutes ago. 😭 You missed a lot — check the recording or notes.";
     }
 
-    countdownMessage.textContent = msg;
+    if (countdownMessage) {
+        countdownMessage.innerHTML = msg;
+    }
 }
 
 updateCountdownMessage();
 
-let countdownInterval = null;
+/* Update every 10 seconds but only refresh text when Exercise 2 is visible */
+var countdownInterval = null;
 
 function startCountdownInterval() {
     if (countdownInterval) {
         clearInterval(countdownInterval);
     }
-    countdownInterval = setInterval(() => {
-        if (!ex2Section.classList.contains('hidden')) {
+    countdownInterval = setInterval(function () {
+        if (!ex2Section.classList.contains("hidden")) {
             updateCountdownMessage();
         }
     }, 10000);
@@ -163,15 +154,3 @@ function startCountdownInterval() {
 
 startCountdownInterval();
 
-/* accessibility: keyboard activation */
-[ex1Link, ex2Link].forEach((el) => {
-    if (!el) {
-        return;
-    }
-    el.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Enter' || ev.key === ' ') {
-            ev.preventDefault();
-            el.click();
-        }
-    });
-});

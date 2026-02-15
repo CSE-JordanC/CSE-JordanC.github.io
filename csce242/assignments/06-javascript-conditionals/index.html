@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Assignment 8 - If Statements (Responsive)</title>
+    <title>Assignment 8 - If Statements</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -16,49 +16,41 @@
                     <h2>If Statements</h2>
                 </header>
 
-                <div class="grid" id="mainGrid">
+                <div class="grid">
 
                     <!-- Navigation / Menu Row -->
-                    <div class="card nav-card" id="navCard" aria-label="Main navigation">
-                        <div class="menu-toggle" id="menuToggle" aria-controls="mainNav" aria-expanded="false">
-                            <span class="menu-arrow" id="menuArrow" aria-hidden="true"></span>
+                    <div class="card nav-card">
+                        <div class="menu-toggle" id="menuToggle">
+                            <span class="menu-arrow" id="menuArrow"></span>
                         </div>
 
-                        <nav id="mainNav">
+                        <nav>
                             <ul id="navList">
-                                <li>
-                                    <a class="exercise-link" id="ex1Link">Exercise 1</a>
-                                </li>
-                                <li>
-                                    <a class="exercise-link" id="ex2Link">Exercise 2</a>
-                                </li>
+                                <li><a href="#" id="ex1Link">Exercise 1</a></li>
+                                <li><a href="#" id="ex2Link">Exercise 2</a></li>
                             </ul>
                         </nav>
                     </div>
 
                     <!-- Exercise 1: How many minutes until class? -->
-                    <section class="card" id="exercise1" aria-labelledby="ex1Link">
-                        <div class="card-head" id="ex1Head">How many minutes until class?</div>
+                    <section class="card" id="exercise1">
+                        <div class="card-head">How many minutes until class?</div>
                         <div class="card-body">
-                            <p class="muted">Use the slider to say how many minutes until class — it goes 0 to 60.</p>
+                            <p class="muted">Use the slider (0-60).</p>
 
                             <div class="slider-wrap">
                                 <input id="minutesRange" type="range" min="0" max="60" value="24" />
                                 <div class="minutes-display" id="minutesValue">24 minutes</div>
-                                <div class="slider-msg" id="sliderMessage" aria-live="polite">
-                                    <!-- message populated by JS -->
-                                </div>
+                                <div class="slider-msg" id="sliderMessage"></div>
                             </div>
                         </div>
                     </section>
 
                     <!-- Exercise 2: Countdown till class -->
-                    <section class="card" id="exercise2" aria-labelledby="ex2Link">
-                        <div class="card-head" id="ex2Head">Countdown till class</div>
+                    <section class="card hidden" id="exercise2">
+                        <div class="card-head">Countdown till class</div>
                         <div class="card-body">
-                            <p class="muted" id="countdownMessage" aria-live="polite">
-                                <!-- message populated by JS -->
-                            </p>
+                            <p class="muted" id="countdownMessage"></p>
                         </div>
                     </section>
 
@@ -76,4 +68,3 @@
     <script src="script.js" defer></script>
 </body>
 </html>
-

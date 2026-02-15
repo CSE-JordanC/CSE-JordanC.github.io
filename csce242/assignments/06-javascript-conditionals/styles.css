@@ -1,3 +1,4 @@
+/* Color variables for site theme */
 :root {
     --bg: #f3f6ef;
     --accent: #3b7b83;
@@ -5,18 +6,18 @@
     --muted: #7b9b9d;
     --card: #ffffff;
     --border: #cfe3df;
-    --accent-rose: #c76d6d;
-    --shadow-color: rgba(0,0,0,0.02);
 }
 
+/* Global page layout and typography */
 html, body {
     height: 100%;
     margin: 0;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--accent-dark);
 }
 
+/* Center main page content */
 #main-content {
     max-width: 900px;
     margin: 36px auto;
@@ -24,44 +25,35 @@ html, body {
     text-align: center;
 }
 
-.page-header {
-    padding: 18px 12px 6px;
-    margin-bottom: 6px;
-}
-
+/* Main heading style */
 .page-header h1 {
     margin: 0;
-    font-size: 38px;
+    font-size: 36px;
     color: var(--accent);
-    letter-spacing: 1px;
 }
 
+/* Subheading style */
 .page-header h2 {
-    margin: 10px 0 18px;
+    margin: 8px 0 18px;
     font-size: 20px;
-    color: var(--accent-rose);
-    font-weight: 600;
+    color: #c76d6d;
 }
 
+/* Grid layout for cards */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
-    align-items: start;
 }
 
-/* Card */
+/* General card styling */
 .card {
     border: 1px solid var(--border);
     background: var(--card);
-    box-shadow: 0 2px 0 var(--shadow-color);
     padding: 18px;
-    margin-top: 6px;
-    text-align: center;
-    border-radius: 2px;
 }
 
-/* NAV card -- default (large screens) is row layout */
+/* Navigation card layout */
 .nav-card {
     display: flex;
     align-items: center;
@@ -72,168 +64,128 @@ html, body {
     border: none;
 }
 
-/* Card head/body */
+/* Card section headings */
 .card-head {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
     color: var(--accent);
     margin-bottom: 8px;
 }
 
+/* Card content spacing */
 .card-body {
-    padding: 6px 4px 2px;
+    padding: 6px;
 }
 
-/* menu toggle (small screens) */
+/* Toggle arrow container for small screens */
 .menu-toggle {
     display: flex;
     align-items: center;
-    gap: 8px;
     cursor: pointer;
-    user-select: none;
 }
 
+/* Triangle arrow styling */
 .menu-arrow {
     width: 0;
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 8px solid var(--accent-dark);
-    transition: transform .25s ease;
-    display: inline-block;
 }
 
+/* Rotate arrow when menu is open */
 .menu-arrow.up {
     transform: rotate(180deg);
 }
 
+/* Horizontal nav list */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 8px;
-    align-items: center;
 }
 
+/* Nav item spacing */
 nav li {
     padding: 6px 8px;
-    font-weight: 500;
-    cursor: pointer;
 }
 
+/* Add pipe between nav items except last */
 nav li:not(:last-child)::after {
     content: " |";
     margin-left: 8px;
     color: var(--muted);
-    opacity: .8;
 }
 
+/* Nav link styling */
 nav a {
-    color: var(--accent-dark);
     text-decoration: none;
+    color: var(--accent-dark);
 }
 
+/* Pointer cursor on hover */
 nav a:hover {
     cursor: pointer;
 }
 
+/* Slider container layout */
 .slider-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-top: 14px;
 }
 
+/* Slider width */
 input[type="range"] {
     width: 60%;
-    min-width: 200px;
-    max-width: 420px;
 }
 
+/* Bold minutes display */
 .minutes-display {
-    font-weight: 600;
-    color: var(--accent-dark);
+    font-weight: bold;
 }
 
+/* Muted text color */
 .muted {
     color: var(--muted);
-    font-size: 15px;
-    margin-top: 8px;
 }
 
-.slider-msg {
-    font-size: 15px;
-    color: var(--muted);
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
+/* Utility class to hide elements */
+.hidden {
+    display: none;
 }
 
-/* ---------- Responsive changes ---------- */
-/* On small screens stack the menu-toggle above the nav list */
+/* Small screen navigation behavior */
 @media (max-width: 720px) {
     .nav-card {
-        justify-content: flex-start;
-        padding-left: 6px;
-        flex-direction: column;    /* <-- changed: stack vertically */
-        align-items: flex-start;   /* <-- ensure toggle is at left */
-    }
-
-    /* give the toggle a bit of space from the nav list */
-    .menu-toggle {
-        margin-bottom: 6px;        /* <-- new spacing so toggle sits above nav */
-        margin-right: 0;
-    }
-
-    /* hide nav items list by default on small screens */
-    nav ul {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
         display: none;
-        margin-top: 0;             /* reduce extra vertical gap */
-        gap: 6px;
     }
 
     nav ul.open {
         display: flex;
     }
 
-    /* remove pipes for vertical layout */
     nav li:not(:last-child)::after {
         content: "";
     }
+
+    .menu-toggle {
+        margin-bottom: 6px;
+    }
 }
 
+/* Hide toggle arrow on large screens */
 @media (min-width: 721px) {
     .menu-toggle {
         display: none;
     }
-
-    nav ul {
-        display: flex;
-    }
 }
 
-#main-footer {
-    margin-top: 18px;
-    color: var(--muted);
-}
-
-.exercise-link {
-    color: var(--accent-dark);
-    text-decoration: none;
-    padding: 6px 6px;
-    display: inline-block;
-}
-
-.exercise-link:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
