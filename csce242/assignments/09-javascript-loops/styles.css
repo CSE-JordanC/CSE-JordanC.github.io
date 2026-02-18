@@ -1,0 +1,127 @@
+:root {
+    --bg: #f3f6ef;
+    --accent: #3b7b83;
+    --accent-dark: #2f6a6f;
+    --muted: #7b9b9d;
+    --card: #ffffff;
+    --border: #cfe3df;
+}
+
+/* Global page layout and typography */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--accent-dark);
+}
+
+/* Center main page content */
+#main-content {
+    max-width: 900px;
+    margin: 36px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main heading style */
+.page-header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: var(--accent);
+}
+
+/* Subheading style */
+.page-header h2 {
+    margin: 8px 0 18px;
+    font-size: 20px;
+    color: #c76d6d;
+}
+  
+.art-section { display:flex; justify-content:center; margin-top: 30px; }
+  
+.scene {
+    width: 360px;
+    height: 320px;
+    position: relative;
+}
+  
+.bowl {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+    border: 6px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.12);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 6%;
+}
+  
+/* simple rim to look like a bowl */
+.bowl::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 12%;
+    right: 12%;
+    height: 32px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    z-index: 4;
+}
+  
+/* the water area */
+.water {
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    bottom: 8%;
+    height: 58%;
+    background: linear-gradient(to bottom, #6fc3e8, #1e86c1);
+    border-radius: 45% 45% 40% 40% / 50% 50% 40% 40%;
+    overflow: hidden;
+}
+  
+/* bubble basic style */
+.bubble {
+    position: absolute;
+    bottom: -32px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+                  rgba(255,255,255,0.95) 0%,
+                  rgba(255,255,255,0.6) 20%,
+                  rgba(255,255,255,0.18) 60%,
+                  rgba(255,255,255,0.05) 100%);
+    box-shadow: inset -2px -2px 4px rgba(255,255,255,0.35);
+    pointer-events: none;
+    opacity: 0.95;
+  
+    /* single simple animation */
+    animation-name: moveUp;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+  
+/* three sizes */
+.bubble.small  { width: 10px; height: 10px; }
+.bubble.medium { width: 16px; height: 16px; }
+.bubble.large  { width: 24px; height: 24px; }
+  
+/* simple rise keyframes */
+@keyframes moveUp {
+    0% {
+      bottom: -32px;
+      transform: translateX(0) scale(1);
+      opacity: 0.95;
+    }
+
+    100% {
+      bottom: calc(100% + 32px);
+      transform: translateX(0) scale(1.02);
+      opacity: 0.15;
+    }
+}
+  
+  
