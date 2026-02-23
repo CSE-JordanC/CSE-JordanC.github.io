@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Guitar Basics — SkillSwap Hub</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Irish+Grover&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="viewskills-page">
+
+            <!-- Header -->
+            <header class="site-header">
+                <div class="brand">
+                    <div class="brand-title">SkillSwap Hub</div>
+                    <div class="brand-sub">Learn, Share, Grow</div>
+                </div>
+
+                <!-- Nav Toggle Button -->
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                    ☰
+                </button>
+
+                <nav id="mainNav" class="main-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="skills.html">Skills</a>
+                    <a class="nav-link" href="news.html">News</a>
+                </nav>
+
+                <div class="auth">
+                    <button class="btn btn-accent">Login/Sign Up</button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="content-area">
+
+                <div class="layout">
+
+                    <!-- LEFT COLUMN -->
+                    <section class="main-column">
+
+                        <div class="skill-hero">
+                            <img src="images/guitarbasics.png" alt="Guitar lesson">
+
+                            <div class="skill-info">
+                                <h1>Guitar Basics</h1>
+                                <div class="badge">Music · Beginner</div>
+
+                                <p>
+                                    Learn 6 open chords, basic strumming patterns, and 3 easy songs.
+                                    Lessons are 45 minutes and perfect for beginners. Includes
+                                    handouts, chord charts, and a guided practice plan.
+                                </p>
+
+                                <div class="tags">
+                                    <span>#beginner</span>
+                                    <span>#in-person</span>
+                                    <span>#one-on-one</span>
+                                    <span>#acoustic</span>
+                                </div>
+
+                                <div class="instructor">
+                                    <div>
+                                        <strong>Alex M.</strong>
+                                        <div>4.9 ★ (24 reviews)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="reviews">
+                            <h2>Reviews</h2>
+
+                            <div class="review">
+                                <strong>Sarah L.</strong> ★★★★★
+                                <p>“Awesome lessons! Alex made learning guitar easy and enjoyable.”</p>
+                            </div>
+
+                            <div class="review">
+                                <strong>David P.</strong> ★★★★★
+                                <p>“Fantastic instructor. Patient and encouraging!”</p>
+                            </div>
+                        </section>
+
+                        <section class="similar">
+                            <h2>Similar Skills</h2>
+
+                            <div class="similar-grid">
+                                <div class="similar-card">
+                                    <img src="images/introtoweb.png" alt="">
+                                    <h4>Intro to Web Design</h4>
+                                    <a href="viewskills.html" class="btn btn-green">View</a>
+                                </div>
+
+                                <div class="similar-card">
+                                    <img src="images/introtopainting.png" alt="">
+                                    <h4>Intro to Painting</h4>
+                                    <a href="viewskills.html" class="btn btn-green">View</a>
+                                </div>
+                            </div>
+                        </section>
+
+                    </section>
+
+                    <!-- RIGHT SIDEBAR -->
+                    <aside class="sidebar">
+                        <button class="btn btn-message">Message Instructor</button>
+                        <button class="btn btn-save">❤ Save</button>
+
+                        <div class="price">$25 <span>per lesson</span></div>
+
+                        <div class="availability">
+                            <strong>Availability</strong>
+                            <p>Most weekdays after 5pm.</p>
+                        </div>
+                    </aside>
+
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-cta"></div>
+            </footer>
+
+            <footer class="bottom-site-footer">
+                <div class="site-footer-sub">
+                    © <span id="year"></span> SkillSwap Hub · <a class="footer-link" href="#">Terms</a> · <a class="footer-link" href="#">Privacy</a>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>

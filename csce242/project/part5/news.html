@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SkillSwap Hub — News</title>
+
+        <!-- Google fonts used in the design (already used in your project) -->
+        <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Irish+Grover&display=swap" rel="stylesheet">
+
+        <!-- your main stylesheet -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="page news-page">
+
+            <header class="site-header">
+                <div class="brand">
+                <div class="brand-title">SkillSwap Hub</div>
+                <div class="brand-sub">Learn, Share, Grow</div>
+                </div>
+
+                <!-- Nav Toggle Button -->
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                    ☰
+                </button>
+
+                <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="skills.html">Skills</a>
+                <a class="nav-link active" href="news.html">News</a>
+                </nav>
+
+                <div class="auth">
+                    <button class="btn btn-accent">Login/Sign Up</button>
+                </div>
+            </header>
+
+            <!-- Hero -->
+            <section class="news-hero">
+                <div class="news-hero-left">
+                    <h1 class="news-title">SkillSwap Hub: Spring Community Spotlight</h1>
+                    <p class="news-sub">Read about our most active members and most-used skill workshops this month.</p>
+
+                    <a class="btn btn-primary hero-cta" href="#">Read Full Article</a>
+                </div>
+
+                <div class="news-hero-art">
+                    <img src="images/communityspotlight.png" alt="News hero artwork" />
+                </div>
+            </section>
+
+            <!-- Main area: articles + sidebar upcoming events -->
+            <main class="news-main content-area">
+                <div class="news-grid">
+
+                    <!-- Primary column: list of articles -->
+                    <section class="news-list">
+
+                        <div class="events-header">Latest News</div>
+
+                        <article class="news-card">
+                            <img src="images/skillsharenight.png" alt="" class="news-card-img" />
+                            <div class="news-card-body">
+                                <h3 class="news-card-title">New: Local SkillShare Night - Apr 22</h3>
+                                <p class="news-card-sub">Read about SkillShare night and learn more about the workshops that might be there.</p>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <img src="images/featurejamie.png" alt="" class="news-card-img" />
+                            <div class="news-card-body">
+                                <h3 class="news-card-title">Feature: How Jamie built a portfolio with SkillSwap Advanced</h3>
+                                <p class="news-card-sub">Look into how one of our community members built their portfolio step by step.</p>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <img src="images/platformupdate.png" alt="" class="news-card-img" />
+                            <div class="news-card-body">
+                                <h3 class="news-card-title">Platform Update: Easier image uploads</h3>
+                                <p class="news-card-sub">Read about all the patch notes on the latest update of SkillSwap Hub</p>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- Sidebar: upcoming events -->
+                    <aside class="news-sidebar">
+                        <div class="events-header-side">Upcoming Events</div>
+
+                        <div class="event-card">
+                            <div class="event-date">April 11</div>
+                            <h4 class="event-title">Free Coding Class</h4>
+                            <p class="event-sub">Read about our most talked about night.</p>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-date">April 22</div>
+                            <h4 class="event-title">SkillShare Night</h4>
+                            <p class="event-sub">One of our biggest events of the year.</p>
+                        </div>
+                    </aside>
+
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div class="footer-cta"></div>
+            </footer>
+
+            <footer class="bottom-site-footer">
+                <div class="site-footer-sub">
+                    © <span id="year"></span> SkillSwap Hub · <a class="footer-link" href="#">Terms</a> · <a class="footer-link" href="#">Privacy</a>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>

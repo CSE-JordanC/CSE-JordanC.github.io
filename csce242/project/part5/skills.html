@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SkillSwap Hub — Skills</title>
+
+        <!-- Google fonts used in the design -->
+        <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Irish+Grover&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="page skills-page">
+
+            <!-- Header -->
+            <header class="site-header">
+                <div class="brand">
+                    <div class="brand-title">SkillSwap Hub</div>
+                    <div class="brand-sub">Learn, Share, Grow</div>
+                </div>
+
+                <!-- Nav Toggle Button -->
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                    ☰
+                </button>
+
+                <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="skills.html">Skills</a>
+                    <a class="nav-link" href="news.html">News</a>
+                </nav>
+
+                <div class="auth">
+                    <button class="btn btn-accent">Login/Sign Up</button>
+                </div>
+            </header>
+
+            <!-- Top hero / search band (white area above gray content) -->
+            <section class="hero-compact">
+                <div class="hero-copy">
+                    <h1 class="hero-compact-title">Post Your Own Community Skill</h1>
+                    <p class="hero-compact-sub">Help the community by sharing your very own hand crafted skill.</p>
+
+                    <div class="hero-compact-actions">
+                        <button class="btn btn-primary">Post Skill</button>
+                    </div>
+                </div>
+
+                <div class="hero-compact-art">
+                    <img src="images/shareskills.png" alt="Community skill artwork" />
+                </div>
+            </section>
+
+            <div class="search-heading">
+                <p>Find instructors and peer helpers by category, experience, or location.</p>
+            </div>
+
+            <!-- Search / filter row -->
+            <section class="search-filter">
+                <div class="search-actions">
+                    <!-- left 'search' control -->
+                    <button class="search-btn" aria-label="Search for interested skills">
+                        <span class="search-label">Search for interested skills</span>
+                        <img src="images/search.png" alt="" class="search-icon" />
+                    </button>
+                
+                    <!-- right filter control -->
+                    <button class="filter-btn" aria-label="Filter skills">
+                        Filter | Skills <span class="chev">↓</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Main content area -->
+            <main class="content-area">
+
+                <!-- Grid of featured skill cards -->
+                <section class="cards-section">
+                    <div class="cards-grid">
+
+                    <!-- Row 1 -->
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/guitarbasics.png" alt="Guitar Basics" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Guitar Basics</h3>
+                            <div class="skill-category">Music - Beginner</div>
+                            <div class="skill-meta">Instructor • 5 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/introtoweb.png" alt="Intro to Web Design" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Intro to Web Design</h3>
+                            <div class="skill-category">Tech - Intermediate</div>
+                            <div class="skill-meta">Instructor • 8 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/personalfitness.png" alt="Fitness Coaching" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Fitness Coaching</h3>
+                            <div class="skill-category">Health - Advanced</div>
+                            <div class="skill-meta">Instructor • 10 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/spanishbasics.png" alt="Spanish Basics" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Spanish Basics</h3>
+                            <div class="skill-category">Language - Beginner</div>
+                            <div class="skill-meta">Instructor • 6 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/introtopainting.png" alt="Intro to Painting" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Intro to Painting</h3>
+                            <div class="skill-category">Art - Beginner</div>
+                            <div class="skill-meta">Instructor • 4 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <img class="skill-img" src="images/digitalphotography.png" alt="Digital Photography 2" />
+                        <div class="skill-body">
+                            <h3 class="skill-title">Digital Photography</h3>
+                            <div class="skill-category">Creative - Beginner</div>
+                            <div class="skill-meta">Instructor • 5 lessons</div>
+                            <a href="viewskills.html" class="btn btn-green">View</a>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <!-- Pagination control -->
+                <nav class="pagination" aria-label="Skills pagination">
+                    <button class="page-btn">←</button>
+                    <button class="page-btn">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn">6</button>
+                    <button class="page-btn">→</button>
+                </nav>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-cta"></div>
+            </footer>
+
+            <footer class="bottom-site-footer">
+                <div class="site-footer-sub">
+                    © <span id="year"></span> SkillSwap Hub · <a class="footer-link" href="#">Terms</a> · <a class="footer-link" href="#">Privacy</a>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>

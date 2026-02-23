@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SkillSwap Hub</title>
+
+        <!-- Google fonts used in the design -->
+        <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Irish+Grover&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="page">
+
+        <!-- Top header / nav -->
+        <header class="site-header">
+            <div class="brand">
+                <div class="brand-title">SkillSwap Hub</div>
+                <div class="brand-sub">Learn, Share, Grow</div>
+            </div>
+
+            <!-- Nav Toggle Button -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                ☰
+            </button>
+
+            <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="skills.html">Skills</a>
+                <a class="nav-link" href="news.html">News</a>
+            </nav>
+
+            <div class="auth">
+                <button class="btn btn-accent">Login/Sign Up</button>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    Share Your Skills.<br />
+                    Learn Something New.
+                </h1>
+                <p class="hero-sub">
+                    Connect with people in your community to teach, learn, and grow together.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="skills.html" class="btn btn-secondary">Browse Skills</a>
+                    <a href="skills.html" class="btn btn-primary">Post a Skill</a>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <img src="images/shareskills.png" alt="Hero artwork" />
+            </div>
+        </section>
+
+        <!-- How it works / features (centered) -->
+        <section class="how">
+            <h2 class="section-title">How SkillSwap Hub Works</h2>
+
+            <div class="feature-cards">
+                <article class="card">
+                    <img src="images/createaccount.png" alt="" />
+                    <h3>Create an Account</h3>
+                    <p>Sign up to join the SkillSwap Hub community and start sharing skills.</p>
+                </article>
+
+                <article class="card">
+                    <img src="images/postorbrowseskills.png" alt="" />
+                    <h3>Post or Browse Skills</h3>
+                    <p>Add skills you offer or explore skills posted by others.</p>
+                </article>
+
+                <article class="card">
+                    <img src="images/learnandconnect.png" alt="" />
+                    <h3>Learn and Connect</h3>
+                    <p>Discover new opportunities and connect through shared knowledge.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured skills grid -->
+        <section class="featured">
+            <h2 class="section-heading">Featured Skills</h2>
+
+            <div class="cards-grid">
+
+                <div class="skill-card">
+                    <img class="skill-img" src="images/guitarbasics.png" alt="Guitar Basics" />
+                    <div class="skill-body">
+                        <h3 class="skill-title">Guitar Basics</h3>
+                        <div class="skill-category">Music - Beginner</div>
+                        <div class="skill-meta">Instructor • 5 lessons</div>
+                        <a href="viewskills.html" class="btn btn-green">View</a>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <img class="skill-img" src="images/introtoweb.png" alt="Intro to Web Design" />
+                    <div class="skill-body">
+                        <h3 class="skill-title">Intro to Web Design</h3>
+                        <div class="skill-category">Tech - Intermediate</div>
+                        <div class="skill-meta">Instructor • 8 lessons</div>
+                        <a href="viewskills.html" class="btn btn-green">View</a>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <img class="skill-img" src="images/personalfitness.png" alt="Personal Fitness" />
+                    <div class="skill-body">
+                        <h3 class="skill-title">Personal Fitness</h3>
+                        <div class="skill-category">Health - Advanced</div>
+                        <div class="skill-meta">Instructor • 10 lessons</div>
+                        <a href="viewskills.html" class="btn btn-green">View</a>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <img class="skill-img" src="images/digitalphotography.png" alt="Digital Photography" />
+                    <div class="skill-body">
+                        <h3 class="skill-title">Digital Photography</h3>
+                        <div class="skill-category">Creative - Beginner</div>
+                        <div class="skill-meta">Instructor • 5 lessons</div>
+                        <a href="viewskills.html" class="btn btn-green">View</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Site Footer -->
+        <footer class="site-footer">
+            <div class="footer-cta">
+                <h3>Ready to Share Your Skills?</h3>
+                <p>Join SkillSwap Hub today and start learning from your community.</p>
+                <a href="skills.html" class="btn-accent-large btn">Get Started</a>
+            </div>
+        </footer>
+
+        <!-- Bottom Site Footer -->
+        <footer class="bottom-site-footer">
+            <div class="site-footer-sub">
+                © <span id="year"></span> SkillSwap Hub ·
+                <a class="footer-link" href="#">Terms</a> ·
+                <a class="footer-link" href="#">Privacy</a>
+            </div>
+        </footer>
+
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
+
+
