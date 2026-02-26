@@ -41,6 +41,10 @@ img {
     max-width:40%;
 }
 
+#movie {
+    width:100%;
+}
+
 /* Gallery */
 #gallery section {
     background:#edf6f9;
@@ -71,38 +75,37 @@ button:disabled {
 table {
     border-collapse: collapse;
 }
-
 table th, table td {
-    padding: 5px;
-    border: 1pc solid darkslategray;
+    padding:5px;
+    border:1px solid darkslategray;
 }
 
 table th {
     background-color: #05668d;
-    color: white;
+    color:white;
 }
 
 /* Slideshow */
 #slideshow {
-    position: relative;
+    position:relative;
 }
 
 .arrow {
-    display: block;
-    font-size: 5em;
+    display:block;
+    font-size:5em;
     text-decoration: none;
     font-weight: 600;
-    position: absolute;
+    position:absolute;
     top:30%;
     color:white;
 }
 
 #arrow-prev{
-    left: 5%;
+    left:5%;
 }
 
-#arrow-next{
-    right: 5%;
+#arrow-next {
+    right:5%;
 }
 
 /* Navigation */
@@ -223,8 +226,8 @@ a {
     display:none;
 }
 
-.hidden{
-    display: none;
+.hidden {
+    display:none;
 }
 
 /* Larger devices */
