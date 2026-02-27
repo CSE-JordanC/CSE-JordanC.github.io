@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Assignment 11 - Classes</title>
+
+        <!-- W3.CSS for the modal (as requested) -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="main-content">
+            <header class="page-header">
+                <h1>Assignment 11</h1>
+                <h2>Classes - Music Experience</h2>
+            </header>
+
+            <section class="art-section" aria-label="Song selector">
+                <div class="scene">\
+                    <div id="songs-area">
+                        <ul id="song-list" class="song-list" aria-live="polite"></ul>
+                    </div>
+
+                    <div id="songModal" class="w3-modal" style="z-index:9999;">
+                      <div class="w3-modal-content w3-animate-opacity" style="padding:0; position:relative; max-width:1100px;">
+                        <button id="modalCloseBtn" class="w3-button" title="Close">&times;</button>
+
+                        <div class="modal-inner">
+                          <div id="modalVideoWrap" class="modal-video"></div>
+                          <div id="modalInfo" class="modal-info">
+                            <h2 id="modalTitle">Title</h2>
+                            <div id="modalArtist" class="byline">by Artist</div>
+                            <div class="meta"><strong>Album:</strong> <span id="modalAlbum">-</span></div>
+                            <div class="meta"><strong>Year:</strong> <span id="modalYear">-</span></div>
+                            <div class="meta"><strong>Genre:</strong> <span id="modalGenre">-</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="video-wrapper" aria-hidden="true">
+                        <div id="video-container"></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="main-footer">
+                <p>@jordanchavous.com</p>
+            </footer>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
