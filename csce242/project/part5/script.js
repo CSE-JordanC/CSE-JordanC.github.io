@@ -1,7 +1,8 @@
 // Set footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Mobile nav toggle (your existing behavior)
+// Mobile nav toggle
 const toggleBtn = document.getElementById("navToggle");
 const nav = document.getElementById("mainNav");
 
@@ -11,67 +12,85 @@ if (toggleBtn && nav) {
   });
 }
 
-/* ---------------- News card expand behavior ----------------- */
+/* ---------------- News Card Behavior ---------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    const card = document.getElementById("skillshare-card");
+    const toggle = document.getElementById("skillshare-toggle");
+    const detail = document.getElementById("skillshare-detail");
+    const closeBtn = document.getElementById("skillshare-close");
 
-(function() {
-  const card = document.getElementById("skillshare-card");
-  if (!card) return; // nothing to do if card not present
-
-  const toggle = document.getElementById("skillshare-toggle");
-  const detail = document.getElementById("skillshare-detail");
-  const closeBtn = document.getElementById("skillshare-close");
-
-  if (!toggle || !detail) return;
-
-  function openDetail() {
-    card.classList.add("expanded");
-    toggle.setAttribute("aria-expanded", "true");
-    detail.setAttribute("aria-hidden", "false");
-    // move focus into the detail (first focusable element)
-    // try the close button if present, otherwise focus detail container
-    if (closeBtn) {
-      closeBtn.focus();
-    } else {
-      detail.focus();
+    // If DOM doesn't include these elements, bail out gracefully
+    if (!card || !toggle || !detail) {
+      console.warn("SkillShare expand elements not found; skipping init.");
+      return;
     }
-    // set up Escape listener
-    document.addEventListener("keydown", onEsc);
-  }
 
-  function closeDetail(returnFocus = true) {
+    // Ensure initial (closed) state on load (defensive: removes any leftover 'expanded' class)
     card.classList.remove("expanded");
     toggle.setAttribute("aria-expanded", "false");
     detail.setAttribute("aria-hidden", "true");
-    document.removeEventListener("keydown", onEsc);
-    if (returnFocus) toggle.focus();
-  }
 
-  function onEsc(e) {
-    if (e.key === "Escape" || e.key === "Esc") {
-      closeDetail(true);
+    // Avoid double-binding: use a flag on the element
+    if (toggle.dataset.expandInited === "1") return;
+    toggle.dataset.expandInited = "1";
+
+    function openDetail() {
+      card.classList.add("expanded");
+      toggle.setAttribute("aria-expanded", "true");
+      detail.setAttribute("aria-hidden", "false");
+
+      // focus logical control inside detail (close button if present)
+      if (closeBtn) closeBtn.focus();
+      else detail.focus();
+
+      // Add escape key listener (namespaced with a symbol so we can remove reliably)
+      document.addEventListener("keydown", onKeydown);
     }
-  }
 
-  // Toggle on click
-  toggle.addEventListener("click", (e) => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    if (isOpen) closeDetail(true);
-    else openDetail();
-  });
+    function closeDetail(returnFocus = true) {
+      card.classList.remove("expanded");
+      toggle.setAttribute("aria-expanded", "false");
+      detail.setAttribute("aria-hidden", "true");
+      document.removeEventListener("keydown", onKeydown);
+      if (returnFocus) toggle.focus();
+    }
 
-  // Close button (inside panel) if present
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => closeDetail(true));
-  }
-
-  // Also close when clicking outside the card (optional, unobtrusive)
-  document.addEventListener("click", (e) => {
-    if (!card.contains(e.target)) {
-      // only close if it is open
-      if (toggle.getAttribute("aria-expanded") === "true") {
-        closeDetail(false); // do not move focus back if user clicked elsewhere
+    function onKeydown(e) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        closeDetail(true);
       }
     }
-  });
 
-})();
+    function toggleDetail() {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeDetail(true);
+      else openDetail();
+    }
+
+    // Click/tap on the title button toggles the detail
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleDetail();
+    });
+
+    // Close button inside the panel (if present)
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeDetail(true);
+      });
+    }
+
+    // Clicking outside the card closes it (optional, unobtrusive)
+    document.addEventListener("click", (e) => {
+      if (toggle.getAttribute("aria-expanded") === "true" && !card.contains(e.target)) {
+        closeDetail(false); // don't force focus if user clicked elsewhere
+      }
+    });
+
+  } catch (err) {
+    // Log any runtime error so you can see it in the console of the deployed site
+    console.error("Error initializing SkillShare expand behavior:", err);
+  }
+});

@@ -901,6 +901,43 @@
     outline-offset: 4px;
   }
 
+  /* Make sure the expand button looks like a plain inline title (override defaults) */
+.news-expand-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  
+  /* If your theme resets were lost on deploy, this guarantees focus styles are visible */
+  .news-expand-btn:focus {
+    outline: 3px solid rgba(56,106,181,0.14);
+    outline-offset: 4px;
+  }
+  
+  /* Keep the animated panel style we used before */
+  .news-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 260ms ease, padding 200ms ease;
+    padding: 0;
+    margin-top: 0;
+    background: #fff;
+    border-radius: 6px;
+  }
+  .news-card.expanded .news-detail {
+    padding: 12px 0 0 0;
+    margin-top: 12px;
+    max-height: 1200px;
+  }
+
   /* card style */
   .news-page .news-card {
     display: flex;
