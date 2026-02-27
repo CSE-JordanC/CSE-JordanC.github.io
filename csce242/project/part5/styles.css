@@ -851,6 +851,56 @@
     gap: 20px;
   }
   
+  /* --- News expansion panel (hidden by default) --- */
+.news-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 260ms ease, padding 200ms ease;
+    padding: 0 0;
+    margin-top: 0;
+    background: #fff;
+    border-radius: 6px;
+  }
+  
+  /* When expanded we set a large max-height to allow content to show (works well for short panels) */
+  .news-card.expanded .news-detail {
+    padding: 12px 0 0 0;
+    margin-top: 12px;
+    max-height: 1200px; /* large enough for content; transition animates */
+  }
+  
+  /* make the button look like plain title but interactive */
+  .news-expand-btn {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* small visual affordance when expanded */
+  .news-card.expanded .news-expand-btn {
+    text-decoration: underline;
+  }
+  
+  /* detail action row */
+  .news-detail-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    align-items: center;
+  }
+  
+  /* ensure focus styles for keyboard users */
+  .news-expand-btn:focus,
+  #skillshare-close:focus {
+    outline: 3px solid rgba(56,106,181,0.14);
+    outline-offset: 4px;
+  }
+
   /* card style */
   .news-page .news-card {
     display: flex;

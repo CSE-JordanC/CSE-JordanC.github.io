@@ -60,11 +60,34 @@
 
                         <div class="events-header">Latest News</div>
 
-                        <article class="news-card">
+                        <article class="news-card" id="skillshare-card">
                             <img src="images/skillsharenight.png" alt="" class="news-card-img" />
                             <div class="news-card-body">
-                                <h3 class="news-card-title">New: Local SkillShare Night - Apr 22</h3>
+                              <!-- make title a button for accessibility -->
+                                <h3 class="news-card-title">
+                                    <button class="news-expand-btn" aria-expanded="false" aria-controls="skillshare-detail" id="skillshare-toggle">
+                                    New: Local SkillShare Night - Apr 22
+                                    </button>
+                                </h3>
+                          
                                 <p class="news-card-sub">Read about SkillShare night and learn more about the workshops that might be there.</p>
+                          
+                                <!-- hidden detail panel (toggle this) -->
+                                <div class="news-detail" id="skillshare-detail" role="region" aria-hidden="true" tabindex="-1">
+                                    <p><strong>SkillShare Night — April 22</strong></p>
+                                    <p>Join us at the Community Hall from 6:00–9:00 PM for a hands-on evening of mini-workshops. Expect sessions on:</p>
+                                    <ul>
+                                        <li>Intro to Git & GitHub (beginners)</li>
+                                        <li>Upcycling small furniture</li>
+                                        <li>Portrait photography tips</li>
+                                        <li>Quick watercolor techniques</li>
+                                    </ul>
+                                    <p>Bring a laptop for the coding session and any small items you'd like to upcycle. Doors open at 5:45 — workshops start at 6:15. Tickets are free but limited.</p>
+                                    <div class="news-detail-actions">
+                                        <a class="btn btn-primary" href="#">Register</a>
+                                        <button class="btn btn-secondary" id="skillshare-close">Close</button>
+                                    </div>
+                                </div>
                             </div>
                         </article>
 
