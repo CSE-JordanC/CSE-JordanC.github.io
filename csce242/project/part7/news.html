@@ -109,20 +109,55 @@
 
                     <!-- Sidebar: upcoming events -->
                     <aside class="news-sidebar">
-                    <div class="events-header-side">Upcoming Events</div>
+                        <div class="events-header-side">Upcoming Events</div>
 
-                    <div class="event-card">
-                        <div class="event-date">April 11</div>
-                        <h4 class="event-title">Free Coding Class</h4>
-                        <p class="event-sub">Read about our most talked about night.</p>
-                    </div>
+                        <div class="event-card">
+                            <div class="event-date">April 11</div>
+                            <h4 class="event-title">Free Coding Class</h4>
+                            <p class="event-sub">Read about our most talked about night.</p>
+                        </div>
 
-                    <div class="event-card">
-                        <div class="event-date">April 22</div>
-                        <h4 class="event-title">SkillShare Night</h4>
-                        <p class="event-sub">One of our biggest events of the year.</p>
-                    </div>
+                        <div class="event-card">
+                            <div class="event-date">April 22</div>
+                            <h4 class="event-title">SkillShare Night</h4>
+                            <p class="event-sub">One of our biggest events of the year.</p>
+                        </div>
                     </aside>
+
+                    <div class="event-card">
+                        <section id="contact-us">
+                            <div class="event-date">Contact Us</div>
+                            <p>Please reach out with any questions you may have.</p>
+        
+                            <form id="contact-form" method="POST">
+        
+                                <input type="hidden" name="access_key" value="53e75979-40f0-4747-b9e4-f541b3046de4">
+        
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="name" id="name" required>
+                                </p>
+                                <p>
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" id="email" required>
+                                </p>
+                                <p>
+                                    <label for="messgae">Message:</label>
+                                    <textarea name="message" id="message" required></textarea>
+                                </p>
+        
+                                <button class="btn btn-primary hero-cta" type="submit">Send Message</button>
+        
+                                <div id="contact-result"></div>
+                            
+                            </form>
+                        </section>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">How SkillSwap Works</div>
+                        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/4FeAaTEDjDw?si=IpGmNKNgi-CgPoi3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
 
                 </div>
             </main>
@@ -138,6 +173,7 @@
             </footer>
         </div>
 
-        <script src="script.js" defer></script>
+        <script src="script.js"></script>
+        <script src="contact.js"></script>
     </body>
 </html>

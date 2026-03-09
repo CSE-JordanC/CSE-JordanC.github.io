@@ -35,16 +35,29 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggle.dataset.expandInited === "1") return;
     toggle.dataset.expandInited = "1";
 
+    // Namespaced keydown handler so we can remove it reliably
+    function onKeydown(e) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        closeDetail(true);
+      }
+    }
+
     function openDetail() {
       card.classList.add("expanded");
       toggle.setAttribute("aria-expanded", "true");
       detail.setAttribute("aria-hidden", "false");
 
       // focus logical control inside detail (close button if present)
-      if (closeBtn) closeBtn.focus();
-      else detail.focus();
+      // prefer focusing a control inside the panel for screen readers
+      if (closeBtn) {
+        closeBtn.focus({ preventScroll: true });
+      } else {
+        // Ensure panel is focusable for screen readers if no internal control
+        if (!detail.hasAttribute("tabindex")) detail.setAttribute("tabindex", "-1");
+        try { detail.focus({ preventScroll: true }); } catch (err) { /* some browsers may not allow */ }
+      }
 
-      // Add escape key listener (namespaced with a symbol so we can remove reliably)
+      // Add Escape key listener
       document.addEventListener("keydown", onKeydown);
     }
 
@@ -52,13 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.remove("expanded");
       toggle.setAttribute("aria-expanded", "false");
       detail.setAttribute("aria-hidden", "true");
-      document.removeEventListener("keydown", onKeydown);
-      if (returnFocus) toggle.focus();
-    }
 
-    function onKeydown(e) {
-      if (e.key === "Escape" || e.key === "Esc") {
-        closeDetail(true);
+      // Remove Escape key listener
+      document.removeEventListener("keydown", onKeydown);
+
+      // Return focus to the toggle button if requested
+      if (returnFocus) {
+        try { toggle.focus({ preventScroll: true }); } catch (err) { /* ignore */ }
       }
     }
 
@@ -74,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleDetail();
     });
 
-    // Close button inside the panel (if present)
+    // Close button inside the panel
     if (closeBtn) {
       closeBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -82,15 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Clicking outside the card closes it (optional, unobtrusive)
+    // Clicking outside the card closes it
     document.addEventListener("click", (e) => {
       if (toggle.getAttribute("aria-expanded") === "true" && !card.contains(e.target)) {
-        closeDetail(false); // don't force focus if user clicked elsewhere
+        closeDetail(false);
       }
     });
 
+    // Improve keyboard toggling (Enter/Space) for accessibility on the toggle button
+    toggle.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Spacebar" || e.key === "Enter") {
+        e.preventDefault();
+        toggleDetail();
+      }
+    });
+
+
   } catch (err) {
-    // Log any runtime error so you can see it in the console of the deployed site
+    // Logs any runtime error so you can see it in the console of the deployed site
     console.error("Error initializing SkillShare expand behavior:", err);
   }
 });

@@ -1365,6 +1365,16 @@
     outline: 3px solid rgba(56,106,181,0.14);
     outline-offset: 4px;
   }
+
+  /* iframe */
+  #video {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 262px;
+    align-items: center;
+    border: 0;
+  }
   
   /* Mobile: don't reverse the hero order (keeps image placement more consistent) */
   @media (max-width: 800px) {
@@ -1409,6 +1419,7 @@
     padding-left: 12px;
     padding-right: 12px;
   }
+  
   
   /* Slight spacing & visual polish for the inline indicator on desktop */
   @media (min-width: 901px) {
