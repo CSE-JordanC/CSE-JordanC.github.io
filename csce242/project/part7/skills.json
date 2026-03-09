@@ -61,22 +61,32 @@
     },
     {
       "_id": 7,
-      "title": "Guitar: Strumming Clinic",
-      "img_name": "guitar_strums.png",
+      "title": "Songwriting Essentials",
+      "img_name": "songwriting_essentials.png",
       "category": "Music",
       "level": "Intermediate",
-      "lessons": 3,
+      "lessons": 4,
       "instructor": "Alex M.",
-      "description": "Advanced strumming patterns and rhythm practice."
+      "description": "Structure, melody, and lyric writing exercises for original songs."
     },
     {
       "_id": 8,
-      "title": "Photo Composition 101",
-      "img_name": "photo_composition.png",
+      "title": "Portrait Lighting Basics",
+      "img_name": "portrait_lighting.png",
       "category": "Creative",
       "level": "Beginner",
-      "lessons": 2,
+      "lessons": 3,
       "instructor": "Jamie L.",
-      "description": "Rule of thirds, leading lines, and framing techniques."
+      "description": "Simple lighting setups for flattering portraits using natural and artificial light."
+    },
+    {
+      "_id": 9,
+      "title": "Intro to Adobe Illustrator",
+      "img_name": "intro_to_illustrator.png",
+      "category": "Tech",
+      "level": "Beginner",
+      "lessons": 6,
+      "instructor": "Priya S.",
+      "description": "Vector basics: shapes, pen tool, type, and exporting assets for web."
     }
 ]
