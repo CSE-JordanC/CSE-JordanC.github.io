@@ -124,40 +124,49 @@
                         </div>
                     </aside>
 
-                    <div class="event-card">
-                        <section id="contact-us">
-                            <div class="event-date">Contact Us</div>
-                            <p>Please reach out with any questions you may have.</p>
-        
-                            <form id="contact-form" method="POST">
-        
-                                <input type="hidden" name="access_key" value="53e75979-40f0-4747-b9e4-f541b3046de4">
-        
-                                <p>
-                                    <label for="name">Name:</label>
-                                    <input type="text" name="name" id="name" required>
-                                </p>
-                                <p>
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email" required>
-                                </p>
-                                <p>
-                                    <label for="messgae">Message:</label>
-                                    <textarea name="message" id="message" required></textarea>
-                                </p>
-        
-                                <button class="btn btn-primary hero-cta" type="submit">Send Message</button>
-        
-                                <div id="contact-result"></div>
-                            
-                            </form>
-                        </section>
-                    </div>
+                    <!-- Contact Us column-->
+                    <section class="contact-list">
+                        <div class="events-header-bottom">Contact Us</div>
+                        <div class="event-card">
+                            <section id="contact-us">
+                                <div class="event-date">Want to get in touch with us?</div>
+                                <p>Just fill out the information below with any questions or concerns you may have and 
+                                    we'll make sure to respond within 1-3 days.</p>
+            
+                                <form id="contact-form" method="POST">
+            
+                                    <input type="hidden" name="access_key" value="53e75979-40f0-4747-b9e4-f541b3046de4">
+            
+                                    <p>
+                                        <label for="name">Name:</label>
+                                        <input type="text" name="name" id="name" required>
+                                    </p>
+                                    <p>
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email" id="email" required>
+                                    </p>
+                                    <p>
+                                        <label for="messgae">Message:</label>
+                                        <textarea name="message" id="message" required></textarea>
+                                    </p>
+            
+                                    <button class="btn btn-primary hero-cta" type="submit">Send Message</button>
+            
+                                    <div id="contact-result"></div>
+                                
+                                </form>
+                            </section>
+                        </div>
+                    </section>
 
-                    <div class="event-card">
-                        <div class="event-date">How SkillSwap Works</div>
-                        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/4FeAaTEDjDw?si=IpGmNKNgi-CgPoi3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
+                    <!-- HowTo side bar-->
+                    <aside class="howto-sidebar">
+                        <div class="events-header-bottom-side">Skill Swap Guide</div>
+                        <div class="event-card">
+                            <div class="event-date">Educational Video</div>
+                            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/4FeAaTEDjDw?si=IpGmNKNgi-CgPoi3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </aside>
 
                 </div>
             </main>
