@@ -945,7 +945,7 @@
     background: #fff;
     border-radius: 10px;
     padding: 16px;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 0 6px 16px rgba(0,0,0,0.04);
   }
   
@@ -1007,6 +1007,13 @@
     color: var(--blue-700);
     font-size: 26px;
     font-weight: 700;
+  }
+
+  .news-page .event-date-bottom {
+    color: var(--blue-700);
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
   }
   
   .news-page .event-title {
