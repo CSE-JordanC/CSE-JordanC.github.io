@@ -156,10 +156,19 @@ document.addEventListener("DOMContentLoaded", () => {
         // clear any existing static markup (so we don't duplicate)
         grid.innerHTML = "";
 
-        // append items
-        items.forEach((item) => {
-          const cardEl = createSkillCard(item);
-          grid.appendChild(cardEl);
+        // Determine how many to show
+        const isHomePage = window.location.pathname.includes("index.html") 
+        || window.location.pathname === "/";
+
+        const itemsToShow = isHomePage ? items.slice(0, 4) : items;
+
+        // clear grid
+        grid.innerHTML = "";
+
+        // render selected items
+        itemsToShow.forEach((item) => {
+        const cardEl = createSkillCard(item);
+        grid.appendChild(cardEl);
         });
       } catch (err) {
         console.error("Error loading skills JSON:", err);
